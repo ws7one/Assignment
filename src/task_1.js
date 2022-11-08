@@ -6,8 +6,8 @@ function Task_1({ row = 4, col = 4, NO_OF_RED_BOX = 2 }) {
 
     const generateGrid = () => {
         return new Array(row * col).fill(0).map((k, i) => {
-            if (clickedIds.includes(i)) {
-                const clickedIndex = clickedIds.findIndex((id) => id === i);
+            const clickedIndex = clickedIds.findIndex((id) => id === i);
+            if (clickedIndex > -1) {
                 return (
                     <div
                         className={`game-cell clicked ${
